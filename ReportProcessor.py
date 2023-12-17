@@ -1,3 +1,6 @@
+from Product import Product
+from Sale import Sale
+from Team import Team
 
 class ReportProcessor:
 
@@ -33,5 +36,11 @@ class ReportProcessor:
         pass
     def get_sales_by_product_and_line(self):
         "return the sales filters by product and line"
+        pass
+    def write_sales_by_team_report(self):
+        "write the team report"
+        pass
+    def write_sales_by_product_report(self):
+        "write the product report"
         pass
 
