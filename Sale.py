@@ -11,7 +11,10 @@ class Sale:
         return f"Sale: {self.id}, {self.productId}, {self.teamId}, {self.quantity}, {self.discount}"
     
     def __eq__(self,other):
-        return self.id == other.id
+        if isinstance(other,Sale):
+            return self.id == other.i
+        else:
+            return False
     
     def __hash__(self):
         return hash(self.id)
