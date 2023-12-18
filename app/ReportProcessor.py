@@ -35,7 +35,7 @@ class ReportProcessor:
         revenueByLines = []
         for product in self.list_of_products:
             for sale in self.list_of_sales:
-                if sale.getSaleId()  == product.getProductId():
+                if sale.getProductId()    == product.getProductId():
                     revenue = RevenueByLine(product.getProductName(),product.getProductPrice(),product.getLotSize(),sale.getQuantity(),sale.getDiscount())
                     revenueByLines.append(revenue)
         for revenue in revenueByLines:
