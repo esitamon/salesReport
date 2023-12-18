@@ -21,6 +21,7 @@ class ReportProcessor:
 
     def get_sales_by_product(self):
         "return the sales filters by type of product"
+
         pass
     def get_sales_by_team(self):
         "return the sales filters by team"
@@ -34,7 +35,7 @@ class ReportProcessor:
     def get_sales_by_product_and_team(self):
         "return the sales filters by product and team"
         pass
-    def get_sales_by_product_and_line(self):
+    def get_sales_by_product_line(self):
         "return the sales filters by product and line"
         pass
     def write_sales_by_team_report(self):
