@@ -11,7 +11,7 @@ class ReportProcessor:
         self.list_of_sales = list_of_sales
         self.list_of_teams = list_of_teams
         self.list_of_products = list_of_products
-        self.display_info()
+        #self.display_info()
 
     def display_info(self):
         "display the sales,teams,and products"
