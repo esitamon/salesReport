@@ -20,9 +20,6 @@ class FileLoader:
             with open(self.team_file, newline='', encoding='utf-8-sig') as file:
                 csv_reader = csv.DictReader(file)
                 self.teams = [Team(row['TeamID'], row['Name']) for row in csv_reader]
-                for team in self.teams:
-                    print(team)
-                print("\n")
                 return self.teams
         except FileNotFoundError:
             print(f"Error: File '{self.team_file}' not found.")
@@ -35,9 +32,6 @@ class FileLoader:
             with open(self.product_file, newline='', encoding='utf-8-sig') as file:
                 csv_reader = csv.reader(file, delimiter=',', quotechar='"')
                 self.products = [Product(*row) for row in csv_reader]
-                for product in self.products:
-                    print(product)
-                print("\n")
                 return self.products
         except FileNotFoundError:
             print(f"Error: File '{self.product_file}' not found.")
@@ -50,9 +44,6 @@ class FileLoader:
             with open(self.sale_file, newline='', encoding='utf-8-sig') as file:
                 csv_reader = csv.reader(file, delimiter=',', quotechar='"')
                 self.sales = [Sale(*row) for row in csv_reader]
-                for sale in self.sales:
-                    print(sale)
-                print("\n")
                 return self.sales
         except FileNotFoundError:
             print(f"Error: File '{self.sale_file}' not found.")

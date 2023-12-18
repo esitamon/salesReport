@@ -46,11 +46,12 @@ def main():
     sales = file_loader.get_sales()
     teams = file_loader.get_team()
     products = file_loader.get_products()
-
-
     processor = ReportProcessor(sales, teams, products)
-    processor.write_sales_by_product_report()
-    processor.write_sales_by_team_report()
+
+    processor.get_sales_by_product_line()
+
+    #processor.write_sales_by_product_report()
+    #processor.write_sales_by_team_report()
 
 if __name__ =='__main__':
     main()

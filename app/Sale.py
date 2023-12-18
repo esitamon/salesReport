@@ -4,8 +4,9 @@ class Sale:
         self.id = id
         self.productId = productId
         self.teamId = teamId
-        self.quantity = quantity
-        self.discount = discount
+        self.quantity = int(quantity)
+        self.discount = float(discount)
+
 
     def __str__(self):
         return f"Sale ID: {self.id}, Product ID: {self.productId}, Team ID: {self.teamId}, Quantity: {self.quantity}, Discount: {self.discount}"
@@ -28,5 +29,7 @@ class Sale:
         return self.quantity    
     def getDiscount(self):
         return self.discount
+
+    
     
 

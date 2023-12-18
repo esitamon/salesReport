@@ -1,6 +1,8 @@
 from Product import Product
 from Sale import Sale
 from Team import Team
+from RevenueByLine import RevenueByLine
+from RevenueByTeam import RevenueByTeam
 
 class ReportProcessor:
 
@@ -11,37 +13,34 @@ class ReportProcessor:
         self.list_of_sales = list_of_sales
         self.list_of_teams = list_of_teams
         self.list_of_products = list_of_products
-        #self.display_info()
 
-    def display_info(self):
-        "display the sales,teams,and products"
-        print(self.list_of_sales)
-        print(self.list_of_teams)
-        print(self.list_of_products)
-
-    def get_sales_by_product(self):
-        "return the sales filters by type of product"
-
-        pass
     def get_sales_by_team(self):
         "return the sales filters by team"
-        pass
+        revenueByTeam = []
+        for team in self.list_of_teams:
+            for sale in self.list_of_sales:
+                if sale.getTeamId() == team.getTeamId():
+                    teamRevenue = RevenueByTeam(team.getTeamName(),sale.getQuantity(),sale.getDiscount())   
+                    print(sale)
+        
     def order_in_descending_order(self):
         "return the sales in descending order"
         pass
     def order_in_ascending_order(self):
         "return the sales in ascending order"
         pass
-    def get_sales_by_product_and_team(self):
-        "return the sales filters by product and team"
-        pass
+
     def get_sales_by_product_line(self):
         "return the sales filters by product and line"
-        pass
-    def write_sales_by_team_report(self):
-        "write the team report"
-        pass
-    def write_sales_by_product_report(self):
-        "write the product report"
-        pass
+        revenueByLines = []
+        for product in self.list_of_products:
+            for sale in self.list_of_sales:
+                if sale.getSaleId()  == product.getProductId():
+                    revenue = RevenueByLine(product.getProductName(),product.getProductPrice(),product.getLotSize(),sale.getQuantity(),sale.getDiscount())
+                    revenueByLines.append(revenue)
+        for revenue in revenueByLines:
+            print(revenue)
+        return revenueByLines
+
+        
 

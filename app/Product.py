@@ -2,8 +2,8 @@ class Product:
     def __init__(self,productId,productName,productPrice,lotSize):
         self.productId=productId
         self.productName=productName
-        self.productPrice=productPrice
-        self.lotSize=lotSize
+        self.productPrice=float(productPrice)
+        self.lotSize=int(lotSize)
         
     def __str__(self):
         return f"productId: {self.productId},productName: {self.productName},productPrice: {self.productPrice},lotSize: {self.lotSize}"
